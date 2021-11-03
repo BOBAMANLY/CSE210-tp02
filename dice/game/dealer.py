@@ -1,26 +1,35 @@
 import random
 
-# TODO: Define the Thrower class here.
+# TODO: Define the Dealer class here.
 
 class Dealer:
     def __init__(self):
-        self.dice = []
-        self.num_throws = 0
+        self.current_card = 0
+        self.next_card = 0
+        self.user_input = ""
+        self.points = 300
 
-    def can_throw(self):
-        if (self.dice.count(5) > 0 or self.dice.count(1) > 0 or self.num_throws == 0):
+    def can_deal(self):
+        if self.points > 0:
             return True
+
+    def total_points(self):
+        if self.user_input == "h" and self.next_card > self.current_card:
+            self.points += 100
+        elif self.user_input == "l" and self.next_card < self.current_card:
+            self.points += 100
         else:
-            return False
+            self.points -= 75
+        return self.points
 
-    def get_points(self):
-        fives = self.dice.count(5) * 50
-        ones = self.dice.count(1) * 100
-        return fives + ones
+    def draw_current_card(self):
+        self.current_card = random.randint(1,13)
+        return self.current_card
 
-    def throw_dice(self):
-        self.dice.clear()
-        for _ in range(0, 5):
-            num = random.randint(1,6)
-            self.dice.append(num)
-        self.num_throws += 1
+    def draw_next_card(self):
+        self.next_card = random.randint(1,13)
+        return self.next_card
+
+    def get_guess(self):
+        self.user_input = input("Is the next card higher or lower(h/l)? ")
+        return self.user_input
