@@ -2,7 +2,7 @@ import random
 
 # TODO: Define the Thrower class here.
 
-class Thrower:
+class Dealer:
     def __init__(self):
         self.dice = []
         self.num_throws = 0
