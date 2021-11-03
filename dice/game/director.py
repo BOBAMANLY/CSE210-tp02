@@ -48,7 +48,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        points = self.dealer.get_points()
+        points = self.dealer.total_points()
         self.score += points
         
     def do_outputs(self):
@@ -60,7 +60,7 @@ class Director:
         """
         print(f"\nThe card was: {self.dealer.dice}")
         print(f"Your score is: {self.score}")
-        if self.dealer.can_throw():
+        if self.dealer.can_deal():
             choice = input("Play again? [y/n] ")
             self.keep_playing = (choice == "y")
         else:
