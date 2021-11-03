@@ -1,4 +1,4 @@
-from game.thrower import Thrower
+from game.dealer import Dealer
 
 class Director:
     """A code template for a person who directs the game. The responsibility of 
@@ -19,7 +19,7 @@ class Director:
         """
         self.keep_playing = True
         self.score = 0
-        self.thrower = Thrower()
+        self.dealer = Dealer()
 
     def start_game(self):
         """Starts the game loop to control the sequence of play.
