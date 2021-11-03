@@ -39,7 +39,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        self.thrower.throw_dice()
+        self.dealer #add crap here
         
     def do_updates(self):
         """Updates the important game information for each round of play. In 
@@ -48,7 +48,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        points = self.thrower.get_points()
+        points = self.dealer.get_points()
         self.score += points
         
     def do_outputs(self):
