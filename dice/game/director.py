@@ -16,10 +16,14 @@ class Director:
         
         Args:
             self (Director): an instance of Director.
-        """
+        """ 
         self.keep_playing = True
         self.score = 0
         self.dealer = Dealer()
+
+        self.current_card = 0
+        self.next_card = 0
+        self.guess = ""
 
     def start_game(self):
         """Starts the game loop to control the sequence of play.
@@ -39,8 +43,10 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
+        current_card = self.dealer.draw_current_card()
+        print(f'Current card is {current_card}')
         guess_card = self.dealer.get_guess()
-        current_card = self.dealer.draw_current_card() #add crap here
+        next_card = self.dealer.draw_next_card()
 
         
     def do_updates(self):
@@ -50,8 +56,9 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
+        points = 0
         points = self.dealer.total_points()
-        self.score += points
+        self.score = points
         
     def do_outputs(self):
         """Outputs the important game information for each round of play. In 
@@ -65,5 +72,6 @@ class Director:
         if self.dealer.can_deal():
             choice = input("Play again? [y/n] ")
             self.keep_playing = (choice == "y")
+            print()
         else:
             self.keep_playing = False
