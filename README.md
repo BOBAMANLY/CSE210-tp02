@@ -2,7 +2,17 @@
 HiLo Game with classes
 
 roof
---> 
+--> HiLo Game
+    --> game
+        __init__.py
+        dealer.py
+        director.py
+    --> __init__
+    --> __main__
+--> .gitignore
+--> README
+
+Run the file from the __main__
 
 
 Authors: 
