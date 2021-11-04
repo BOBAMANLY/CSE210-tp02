@@ -39,7 +39,9 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        self.dealer.draw_current_card() #add crap here
+        guess_card = self.dealer.get_guess()
+        current_card = self.dealer.draw_current_card() #add crap here
+
         
     def do_updates(self):
         """Updates the important game information for each round of play. In 
