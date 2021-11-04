@@ -9,3 +9,5 @@ Authors:
   Jacob Fisher fis18011@byui.edu
   Joseph Santos san18036@byui.edu 
   
+  Spencer Damiano dam17003@byui.edu
+  
