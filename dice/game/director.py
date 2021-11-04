@@ -39,7 +39,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        self.dealer #add crap here
+        self.dealer.draw_current_card() #add crap here
         
     def do_updates(self):
         """Updates the important game information for each round of play. In 
@@ -58,7 +58,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        print(f"\nThe card was: {self.dealer.dice}")
+        print(f"\nThe card was: {self.dealer.next_card}")
         print(f"Your score is: {self.score}")
         if self.dealer.can_deal():
             choice = input("Play again? [y/n] ")
