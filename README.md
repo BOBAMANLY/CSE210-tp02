@@ -1,6 +1,7 @@
 # CSE210-tp02
 HiLo Game with classes
 
+(Open the README to see the structure correctly)
 roof
 --> HiLo Game
     --> game
